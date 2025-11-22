@@ -1,10 +1,11 @@
-function CitySearchForm({currentCityText, handleTtextChange,handleSubmit}){
+function CitySearchForm({currentCityText, handleTextChange,handleSubmit}){
 
 	return(
 		<form className="searchForm" onSubmit={handleSubmit}>
 			<input type="text" 
 
 				value={currentCityText}
+				
 				onChange={handleTextChange}
 
 			/>
@@ -18,4 +19,4 @@ function CitySearchForm({currentCityText, handleTtextChange,handleSubmit}){
 		)
 }
 
-export default citySearchForm;
+export default CitySearchForm;
