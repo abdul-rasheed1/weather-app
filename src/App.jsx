@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import SearchForm from './components/searchForm/searchForm.jsx'
+import WeatherDisplay from './components/weatherData/weatherDisplay.jsx'
 import './App.css'
 
 function App() {
@@ -79,7 +80,7 @@ useEffect(()=>{
             <h2 className="error">Error:{isError}</h2>
               ):
           weatherData?(
-            <h2>Displaying weather data for {weatherData.name}</h2>
+            <WeatherDisplay weatherData={weatherData} />
               ):
           <h2>search for a city to see the weather</h2>
 
