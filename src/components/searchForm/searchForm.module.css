@@ -1,0 +1,38 @@
+.search-form {
+    display: flex; /* Aligns input and button side-by-side */
+    gap: 10px;    /* Adds space between the input and button */
+    margin-top: 20px;
+}
+
+.city-input {
+    flex-grow: 1; /* Allows the input to take up all available space */
+    padding: 12px;
+    border: 2px solid #555;
+    border-radius: 6px;
+    background-color: #444;
+    color: white;
+    font-size: 1em;
+    font-weight: 500; /* Part of the "bold and neat" look */
+    /* Resets default button/input appearance on some browsers */
+    box-sizing: border-box; 
+}
+
+.city-input::placeholder {
+    color: #aaa;
+}
+
+.search-button {
+    /* Uses base button styles from index.css, we just enhance it */
+    padding: 12px 20px;
+    background-color: #007bff; /* Strong background color for contrast */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.search-button:hover {
+    background-color: #0056b3;
+}
