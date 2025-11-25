@@ -1,0 +1,48 @@
+.main-container {
+    /* Full Page Utilization & Centering */
+    display: flex;
+    width: 100vw; /* Takes full viewport width */
+    min-height: 100vh; /* Takes full viewport height */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    gap: 30px; /* Space between the two columns */
+    padding: 20px;
+    box-sizing: border-box; /* Includes padding in the element's total width/height */
+}
+
+.search-section {
+    /* Left Column (Adjusted width for better centering) */
+    width: 25%;
+    padding: 30px;
+    background-color: #333; 
+    color: white;
+    font-weight: bold;
+    border-radius: 12px;
+    text-align: left;
+}
+
+.result-section {
+    /* Right Column (Adjusted width for better centering) */
+    width: 45%; 
+    padding: 30px;
+    background-color: #2e2e2e;
+    color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Adds a heavy, distinct style */
+    text-align: center;
+}
+
+/* Media Query for Stacking (Responsiveness) */
+@media (max-width: 900px) {
+    .main-container {
+        flex-direction: column; /* Stacks items vertically */
+        gap: 40px; /* Space between the stacked sections */
+        min-height: auto; /* Don't force full height when stacked */
+        padding: 40px 20px;
+    }
+    .search-section, .result-section {
+        width: 100%; /* Both take full width when stacked */
+        max-width: 450px; /* Prevents stacked content from getting too wide on tablets */
+        margin: 0 auto;
+    }
+}
