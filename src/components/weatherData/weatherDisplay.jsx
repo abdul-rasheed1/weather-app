@@ -1,3 +1,6 @@
+import styles from './weatherDisplay.module.css'
+
+
 const kelvinToCelsius = (K) => K - 273.15;
 
 const KelvinToFahrenheit = (K) =>{
@@ -20,15 +23,33 @@ function WeatherDisplay ({weatherData, unit, unitToggle}){
 	const RoundTemp = Math.round(DisplayTemp);
 
 	return(
-		<div className="weather-Display">
-			<h2>{weatherData.name}</h2>
+		<div className={styles["weather-card"]}>
+			<h2 className={styles['city-name']}>{weatherData.name}</h2>
 
-			<img src={iconUrl} className="weather-icon" alt="weather icon"/>
+			<img src={iconUrl} className={styles["weather-icon"]} alt="weather icon"/>
 
-			<h4>Temperature: {RoundTemp}˚{unit}</h4>
-			<button onClick={unitToggle}>
+			<div className={styles['temp-unit-toggle']}>
+			<h4 className={styles["temp-main"]}>{RoundTemp}˚{unit}</h4>
+			<button className={styles['unit-toggle']} onClick={unitToggle}>
 				Switch to {unit === 'C'? 'F' : 'C'}
 			</button>
+			</div>
+
+			<div className={styles['data-section']}>
+
+				<div className={styles['data-item']}>
+					<p>{weatherData.main.humidity} %</p>
+					<p>Humidity</p>
+
+				</div>
+
+				<div className={styles['data-item']}>
+					<p>{weatherData.wind.speed}m/s</p>
+					<p>wind speed</p>
+
+				</div>
+			
+			</div>
 			
 		</div>
 		)
