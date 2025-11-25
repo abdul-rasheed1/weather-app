@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import SearchForm from './components/searchForm/searchForm.jsx'
 import WeatherDisplay from './components/weatherData/weatherDisplay.jsx'
-import './App.css'
+import styles from './App.module.css'
 
 function App() {
 
@@ -66,9 +66,9 @@ useEffect(()=>{
 
 
   return (
-    <div className="weather-app">
+    <div className={styles['main-container']}>
 
-      <div className="search-Section">
+      <div className={styles['search-section']}>
         <SearchForm 
           currentCitText={cityInput}
           handleTextChange={handleTextChange}
@@ -76,7 +76,7 @@ useEffect(()=>{
          />
       </div>
 
-      <div className="result-Section">
+      <div className={styles['result-section']}>
         {
           isLoading?(
             <h2>Loading weather data...</h2>
