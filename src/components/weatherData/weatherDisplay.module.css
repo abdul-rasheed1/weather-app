@@ -1,0 +1,78 @@
+.weather-card {
+    /* Base Container Styling */
+    padding: 30px;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); 
+    color: #f0f0f0;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    font-family: 'Arial', sans-serif;
+    
+    /* Layout using Grid */
+    display: grid;
+    grid-template-areas: 
+        "city icon temp"
+        "data data data";
+    grid-template-columns: 1fr auto 1fr;
+    gap: 15px;
+}
+
+.city-name {
+    grid-area: city;
+    font-size: 1.8em;
+    font-weight: 700;
+    text-align: left;
+    align-self: center;
+}
+
+.weather-icon {
+    grid-area: icon;
+    width: 80px;
+    height: 80px;
+}
+
+.temp-unit-toggle {
+    grid-area: temp;
+    text-align: right;
+    align-self: center;
+}
+
+.temp-main {
+    font-size: 3.5em;
+    font-weight: 200;
+    display: block; /* Ensures it sits above the button */
+}
+
+.data-section {
+    grid-area: data;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: 15px;
+}
+
+.data-item {
+    font-size: 1em;
+    text-align: center;
+}
+
+.data-item strong {
+    display: block;
+    font-size: 1.4em;
+    margin-bottom: 5px;
+}
+.unit-toggle {
+    margin-left: 10px;
+    font-size: 0.8em;
+    padding: 5px 10px;
+    background-color: #f0f0f0; /* Light background for contrast */
+    color: #1e3c72; /* Dark blue text color */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.unit-toggle:hover {
+    background-color: #d0d0d0;
+}
