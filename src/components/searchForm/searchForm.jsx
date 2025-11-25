@@ -1,15 +1,17 @@
+import styles from './searchForm.module.css';
+
 function CitySearchForm({currentCityText, handleTextChange,handleSubmit}){
 
 	return(
-		<form className="searchForm" onSubmit={handleSubmit}>
-			<input type="text" 
+		<form className={styles["search-form"]} onSubmit={handleSubmit}>
+			<input type="text" className={styles['city-input']}
 
 				value={currentCityText}
 				
 				onChange={handleTextChange}
 
 			/>
-			<button type="submit">
+			<button type="submit" className={styles['search-button']}>
 				Enter
 			</button>
 			
