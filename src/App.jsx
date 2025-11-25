@@ -10,6 +10,7 @@ function App() {
   const [weatherData, setWeatherData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(null);
+  const [unit, setUnit] = useState('C');
   const API_KEY = '056573f96c2eb1ef207f92823ce5f6a1';
 
 
@@ -22,6 +23,11 @@ function App() {
     setCity(cityInput);
     setCityInput('');
   }
+
+  const unitConvert = () =>{
+    setUnit(prevUnit => prevUnit==='C'?'F':'C')
+  }
+
 
 useEffect(()=>{
   if(city){
@@ -80,7 +86,7 @@ useEffect(()=>{
             <h2 className="error">Error:{isError}</h2>
               ):
           weatherData?(
-            <WeatherDisplay weatherData={weatherData} />
+            <WeatherDisplay weatherData={weatherData} unit={unit} unitToggle={unitConvert} />
               ):
           <h2>search for a city to see the weather</h2>
 
