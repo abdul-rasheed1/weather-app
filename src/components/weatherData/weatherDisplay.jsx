@@ -1,14 +1,8 @@
 import styles from './weatherDisplay.module.css'
+import {kelvinToCelsius, kelvinToFahrenheit} from '../../utils/conversion.js';
 
 
-const kelvinToCelsius = (K) => K - 273.15;
 
-const KelvinToFahrenheit = (K) =>{
-	const C = K - 273.15;
-	const Fahr = C * 9/5 + 32;
-	return Fahr;
-
-}
 
 function WeatherDisplay ({weatherData, unit, unitToggle}){
 
@@ -18,7 +12,7 @@ function WeatherDisplay ({weatherData, unit, unitToggle}){
 
 	const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@2x.png`
 
-	const DisplayTemp = unit === 'C'? kelvinToCelsius(Ktemp) : KelvinToFahrenheit(Ktemp);
+	const DisplayTemp = unit === 'C'? kelvinToCelsius(Ktemp) : kelvinToFahrenheit(Ktemp);
 
 	const RoundTemp = Math.round(DisplayTemp);
 
