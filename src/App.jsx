@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import SearchForm from './components/searchForm/searchForm.jsx'
 import WeatherDisplay from './components/weatherData/weatherDisplay.jsx'
-import styles from './App.module.css'
+import styles from './App.module.css';
 
 function App() {
 
@@ -11,7 +11,8 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(null);
   const [unit, setUnit] = useState('C');
-  const API_KEY = '056573f96c2eb1ef207f92823ce5f6a1';
+  const API_KEY = import.meta.env.VITE_API_KEY;
+  const API_URL = import.meta.env.VITE_API_URL;
 
 
   const handleTextChange = (event)=>{
@@ -38,7 +39,7 @@ useEffect(()=>{
     setIsError(null);
 
     try{
-      const URL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`;
+      const URL = `${API_URL}?q=${city}&appid=${API_KEY}`;
       const response = await fetch(URL);
 
       if(!response.ok){
